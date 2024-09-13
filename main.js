@@ -34,7 +34,8 @@ function createWindow() {
             preload: path.join(__dirname, 'preload.js'),
             nodeIntegration: false,
             contextIsolation: true
-        }
+        },
+        icon: './assets/icons/icon.png'
     });
 
     
@@ -60,6 +61,8 @@ function createWindow() {
     });
     ipcMain.on('window-close', () => win.close());
 }
+
+if (require('electron-squirrel-startup')) app.quit();
 
 app.whenReady().then(() => {
     createWindow();
