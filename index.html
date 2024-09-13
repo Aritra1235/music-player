@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: transparent;
+            
+        }
+
+        .non-draggable {
+            -webkit-app-region: no-drag;
+        }
+
+        .draggable {
+            -webkit-app-region: drag;
+        }
+
+        #app-container {
+            background-color: transparent; /* Adjust opacity as needed */
+        }
+
+        
+
+        .good-button {
+            background: linear-gradient(97deg, rgba(255, 255, 255, 0.20) 18.57%, rgba(255, 255, 255, 0.15) 57.71%, rgba(255, 255, 255, 0.10) 116.44%);
+            backdrop-filter: blur(7.5px);
+        }
+
+        /* Hide default scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;  /* Increased radius for a more pill-like shape */
+            border: 2px solid transparent;  /* Creates padding effect */
+            background-clip: content-box;  /* Ensures the background respects the border */
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+
+        /* Ensure the scrollbar doesn't appear on the body */
+        body {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Apply custom scrollbar only to the main content area */
+        .main-content {
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div id="app-container" class="flex flex-col h-screen text-white draggable">
+        <!-- Custom title bar -->
+        <div class="flex justify-between items-center bg-transparent p-2">
+            <div class="text-lg font-bold">Music Player</div>
+            <div class="flex space-x-2 non-draggable">
+                <button id="minimize-btn" class="no-drag px-2 py-1 hover:bg-gray-600 ">-</button>
+                <button id="maximize-btn" class="no-drag px-2 py-1 hover:bg-gray-600 ">□</button>
+                <button id="close-btn" class="no-drag px-2 py-1 hover:bg-gray-600 ">×</button>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="flex-grow overflow-auto non-draggable">
+            <div class="main-content h-full">
+                <div class="flex justify-between p-4 no-drag">
+                    <div class="flex space-x-4">
+                        <button id="play" class="px-4 py-2 good-button rounded">Play</button>
+                        <button id="pause" class="px-4 py-2 good-button rounded">Pause</button>
+                        <button id="stop" class="px-4 py-2 good-button  rounded">Stop</button>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <label for="volume">Volume</label>
+                        <input type="range" id="volume" min="0" max="1" step="0.02" value="1" class="no-drag">
+                        <button class="add-folder px-4 py-2 good-button rounded">Add Folder</button>
+                    </div>
+                </div>
+                <div id="file-display" class="p-4 text-center"></div>
+            </div>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+</html>
