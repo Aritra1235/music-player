@@ -23,10 +23,10 @@ const getMusicFilesRecursively = (dir, fileList = []) => {
 
 function createWindow() {
     const win = new MicaBrowserWindow({
-        width: 800,
-        height: 600,
+        width: 1280,
+        height: 720,
         minHeight: 400,
-        minWidth: 600,
+        minWidth: 900,
         autoHideMenuBar: true,
         show: false,
         frame: false,

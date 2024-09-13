@@ -9,6 +9,7 @@
         body {
             background: transparent;
             -webkit-user-select: none;
+            user-select: none;
             
         }
 
@@ -90,26 +91,33 @@
     <div id="app-container" class="flex flex-col h-screen text-white draggable">
         <!-- Custom title bar -->
         <div class="flex justify-between items-center bg-transparent p-2">
-            <div class="text-lg font-bold">Music Player</div>
-            <div class="flex space-x-2 non-draggable ">
-                <button id="minimize-btn" class="no-drag px-4 py-2 text-lg nav-bar"> <img class="nav-icons" src="assets/chrome-minimize.svg" alt="" srcset=""> </button>
-                <button id="maximize-btn" class="no-drag px-4 py-2 text-lg nav-bar"> <img class="nav-icons" src="assets/chrome-maximize.svg" alt="" srcset=""> </button>
-                <button id="close-btn"    class="no-drag px-4 py-2 text-lg nav-bar"> <img class="nav-icons" src="assets/chrome-close.svg" alt="" srcset=""> </button>
+            <div class="button-group flex flex-grow space-x-4 ">
+                <button id="play" class="px-4 py-2 good-button rounded non-draggable">Play</button>
+                <button id="pause" class="px-4 py-2 good-button rounded non-draggable">Pause</button>
+                <button id="stop" class="px-4 py-2 good-button rounded non-draggable">Stop</button>
+                <div class="flex items-center space-x-4 ml-auto non-draggable">
+                    <label for="volume">Volume</label>
+                    <input type="range" id="volume" min="0" max="1" step="0.02" value="1" class="non-draggable">
+                </div>
+            </div>
+            <div class="header-buttons space-x-2 non-draggable">
+                <button id="minimize-btn" class="no-drag px-4 py-2 text-lg nav-bar">
+                    <img class="nav-icons" src="assets/chrome-minimize.svg" alt="Minimize">
+                </button>
+                <button id="maximize-btn" class="no-drag px-4 py-2 text-lg nav-bar">
+                    <img class="nav-icons" src="assets/chrome-maximize.svg" alt="Maximize">
+                </button>
+                <button id="close-btn" class="no-drag px-4 py-2 text-lg nav-bar">
+                    <img class="nav-icons" src="assets/chrome-close.svg" alt="Close">
+                </button>
             </div>
         </div>
 
         <!-- Main content -->
         <div class="flex-grow overflow-auto non-draggable">
             <div class="main-content h-full">
-                <div class="flex justify-between p-4 no-drag">
-                    <div class="flex space-x-4">
-                        <button id="play" class="px-4 py-2 good-button rounded">Play</button>
-                        <button id="pause" class="px-4 py-2 good-button rounded">Pause</button>
-                        <button id="stop" class="px-4 py-2 good-button  rounded">Stop</button>
-                    </div>
+                <div class="flex justify-end p-4 no-drag">
                     <div class="flex items-center space-x-2">
-                        <label for="volume">Volume</label>
-                        <input type="range" id="volume" min="0" max="1" step="0.02" value="1" class="no-drag">
                         <button class="add-folder px-4 py-2 good-button rounded">Add Folder</button>
                     </div>
                 </div>
