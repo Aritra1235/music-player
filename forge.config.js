@@ -18,18 +18,18 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-deb',
-      platforms: ['linux'],  // Explicitly set the platform to Linux for .deb
+      platforms: ['linux'], // Ensure .deb is included
       config: {
         options: {
           icon: './assets/icons/icon.png',
         },
       },
     },
-    {
-      name: '@electron-forge/maker-rpm',
-      platforms: ['linux'],  // Also target Linux for RPM (optional)
-      config: {},
-    },
+    // Removed RPM maker configuration
+    // {
+    //   name: '@electron-forge/maker-rpm',
+    //   config: {},
+    // },
     {
       name: '@electron-forge/maker-dmg',
       config: {
@@ -40,9 +40,9 @@ module.exports = {
     },
   ],
   plugins: [
-    [
-      '@electron-forge/plugin-auto-unpack-natives',
-      {},
-    ],
+    {
+      name: '@electron-forge/plugin-auto-unpack-natives',
+      config: {},
+    },
   ],
 };
