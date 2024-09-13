@@ -35,6 +35,8 @@ function createWindow() {
         }
     });
 
+    
+
     win.setAutoTheme();   // Same theme as computer
     win.setMicaAcrylicEffect(); // Acrylic for windows 11
     win.setRoundedCorner()

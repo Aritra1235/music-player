@@ -8,6 +8,7 @@
     <style>
         body {
             background: transparent;
+            -webkit-user-select: none;
             
         }
 
@@ -73,6 +74,11 @@
             scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
         }
 
+        .nav-icons {
+            width: 16px;
+            height: 16px;
+            filter: invert(100%);
+        }
         
     </style>
 </head>
@@ -82,9 +88,9 @@
         <div class="flex justify-between items-center bg-transparent p-2">
             <div class="text-lg font-bold">Music Player</div>
             <div class="flex space-x-2 non-draggable">
-                <button id="minimize-btn" class="no-drag px-2 py-1 hover:bg-gray-600 ">-</button>
-                <button id="maximize-btn" class="no-drag px-2 py-1 hover:bg-gray-600 ">□</button>
-                <button id="close-btn" class="no-drag px-2 py-1 hover:bg-gray-600 ">×</button>
+                <button id="minimize-btn" class="no-drag px-4 py-2 hover:bg-gray-600 text-lg "> <img class="nav-icons" src="assets/chrome-minimize.svg" alt="" srcset=""> </button>
+                <button id="maximize-btn" class="no-drag px-4 py-2 hover:bg-gray-600 text-lg "> <img class="nav-icons" src="assets/chrome-maximize.svg" alt="" srcset=""> </button>
+                <button id="close-btn"    class="no-drag px-4 py-2 hover:bg-gray-600 text-lg "> <img class="nav-icons" src="assets/chrome-close.svg" alt="" srcset=""> </button>
             </div>
         </div>
 
