@@ -45,7 +45,7 @@
         /* Handle */
         ::-webkit-scrollbar-thumb {
             background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;  /* Increased radius for a more pill-like shape */
+            border-radius: 35%;  /* Increased radius for a more pill-like shape */
             border: 2px solid transparent;  /* Creates padding effect */
             background-clip: content-box;  /* Ensures the background respects the border */
         }
@@ -79,6 +79,10 @@
             height: 16px;
             filter: invert(100%);
         }
+
+        .nav-bar:hover {
+            filter: invert(50%);
+        }
         
     </style>
 </head>
@@ -87,10 +91,10 @@
         <!-- Custom title bar -->
         <div class="flex justify-between items-center bg-transparent p-2">
             <div class="text-lg font-bold">Music Player</div>
-            <div class="flex space-x-2 non-draggable">
-                <button id="minimize-btn" class="no-drag px-4 py-2 hover:bg-gray-600 text-lg "> <img class="nav-icons" src="assets/chrome-minimize.svg" alt="" srcset=""> </button>
-                <button id="maximize-btn" class="no-drag px-4 py-2 hover:bg-gray-600 text-lg "> <img class="nav-icons" src="assets/chrome-maximize.svg" alt="" srcset=""> </button>
-                <button id="close-btn"    class="no-drag px-4 py-2 hover:bg-gray-600 text-lg "> <img class="nav-icons" src="assets/chrome-close.svg" alt="" srcset=""> </button>
+            <div class="flex space-x-2 non-draggable ">
+                <button id="minimize-btn" class="no-drag px-4 py-2 text-lg nav-bar"> <img class="nav-icons" src="assets/chrome-minimize.svg" alt="" srcset=""> </button>
+                <button id="maximize-btn" class="no-drag px-4 py-2 text-lg nav-bar"> <img class="nav-icons" src="assets/chrome-maximize.svg" alt="" srcset=""> </button>
+                <button id="close-btn"    class="no-drag px-4 py-2 text-lg nav-bar"> <img class="nav-icons" src="assets/chrome-close.svg" alt="" srcset=""> </button>
             </div>
         </div>
 

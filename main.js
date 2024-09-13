@@ -25,6 +25,8 @@ function createWindow() {
     const win = new MicaBrowserWindow({
         width: 800,
         height: 600,
+        minHeight: 400,
+        minWidth: 600,
         autoHideMenuBar: true,
         show: false,
         frame: false,

@@ -11,7 +11,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "electron": "^32.1.0"
+    "electron": "^14.2.5"
   },
   "dependencies": {
     "mica-electron": "^1.5.16"
