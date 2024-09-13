@@ -68,7 +68,7 @@ const displayFiles = () => {
     fileDisplay.innerHTML = ''; // Clear previous content
 
     musicFiles.forEach((file, index) => {
-        const fileName = file.split('/').pop(); // Get the file name from the path
+        const fileName = file.split('\\').pop(); // Get the file name from the path
         const fileItem = document.createElement('div');
         fileItem.textContent = fileName;
         fileItem.className = 'cursor-pointer good-button text-white p-2 m-2 rounded non-draggable';
